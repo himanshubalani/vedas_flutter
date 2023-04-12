@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "501225162879",
+    "project_id": "vedas-flutter",
+    "storage_bucket": "vedas-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501225162879:android:006e11122f2f0aa436174a",
+        "android_client_info": {
+          "package_name": "com.example.vedas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501225162879-t0ukerad9ntfb1i8bu1v8blj5jp7uebb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vedas",
+            "certificate_hash": "e45624ab3fca83886c451704d91673acc878ef97"
+          }
+        },
+        {
+          "client_id": "501225162879-700ml8a13luvt3islgj5i5cb0h03e72k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnhvs3uK8qu9JoWknT5MXHsgMIiivkwYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501225162879-700ml8a13luvt3islgj5i5cb0h03e72k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
