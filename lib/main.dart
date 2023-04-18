@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:vedas/pages/accountpage.dart';
-import 'package:vedas/pages/interestspage.dart';
 import 'package:vedas/pages/loginpage.dart';
 import 'package:vedas/widget_tree.dart';
 
@@ -20,12 +19,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         '/login': (context) => LoginPage(),
-        '/home': (context) => HomePage(),
-        '/interests': (context) => InterestsPage(),
+        '/home': (context) => AccountPage(),
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.purple
+        scaffoldBackgroundColor: Colors.black,
+        primarySwatch: Colors.deepPurple,
       ),
       home: const WidgetTree(),
     );

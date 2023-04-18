@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:vedas/auth.dart';
-
+import 'package:vedas/userinfo.dart';
 import 'accountpage.dart';
+import 'interestspage.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -15,9 +18,22 @@ class _LoginPageState extends State<LoginPage> {
   String? errorMessage = "";
   bool isLogin = true;
 
+  final userRepo = Get.put(UserRepository());
+
+
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+
+  Future<void> createUser(UserModel user) async {
+    try {
+      await userRepo.createUser(user);
+    } on FirebaseAuthException catch (e) {
+        setState(() {
+          errorMessage = e.message;
+        });
+    }
+  }
   Future<void> signInWithEmailAndPassword() async {
     try {
       await Auth().signInWithEmailAndPassword(
@@ -90,8 +106,10 @@ class _LoginPageState extends State<LoginPage> {
         if (isLogin) {
           signInWithEmailAndPassword();
         } else {
-          createUserWithEmailAndPassword();
-        }
+          createUser(UserModel(
+              email: emailController.text,
+              interests: <String, dynamic>{}));
+          }
       },
       child: Text(isLogin ? 'Login' : 'Create Account'),
     );
@@ -105,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
         });
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => AccountPage()),
         );
       },
       child: Text(isLogin ? 'Create Account' : 'Login'),
@@ -115,9 +133,9 @@ class _LoginPageState extends State<LoginPage> {
     return ElevatedButton(
       onPressed: () {
         Auth().signInWithGoogle().then((user) {
-          Navigator.push(
+          Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => HomePage()),
+            MaterialPageRoute(builder: (context) => AccountPage()),
           );
         }).catchError((e) {
           print('Error logging in with Google: $e');

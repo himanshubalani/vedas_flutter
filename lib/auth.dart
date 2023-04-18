@@ -47,10 +47,10 @@ class Auth {
   Future<String?> signOut() async {
     try {
       await _firebaseAuth.signOut();
+      return "Successfully Signed Out";
     } on FirebaseAuthException catch (e) {
       return e.message;
     }
-    return null;
   }
 
 
