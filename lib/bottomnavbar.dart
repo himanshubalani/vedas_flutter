@@ -31,19 +31,19 @@ class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
         type: BottomNavigationBarType.fixed,
         items: [
         BottomNavigationBarItem(
-        icon: Icon(Icons.video_library),
+        icon: Icon(Icons.video_library, color: Colors.red[200],),
         label: 'Videos',
         backgroundColor: Colors.grey[900],
         activeIcon: Icon(Icons.video_library, color: Colors.red[200]),
        ),
         BottomNavigationBarItem(
-        icon: Icon(Icons.book),
+        icon: Icon(Icons.book,color: Colors.blue[200]),
         label: 'Books',
         backgroundColor: Colors.grey[900],
         activeIcon: Icon(Icons.book, color: Colors.blue[200]),
         ),
         BottomNavigationBarItem(
-        icon: Icon(Icons.account_circle),
+        icon: Icon(Icons.account_circle, color: Colors.deepPurple[200]),
         label: 'Account',
         backgroundColor: Colors.grey[900],
         activeIcon: Icon(Icons.account_circle, color: Colors.deepPurple[200]),
