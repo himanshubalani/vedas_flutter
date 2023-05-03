@@ -22,7 +22,9 @@ class _InterestsPageState extends State<InterestsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         title: const Text('Select Interest'),
       ),
       body: SingleChildScrollView(
@@ -53,6 +55,9 @@ class _InterestsPageState extends State<InterestsPage> {
 
               SizedBox(height: 16),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple,
+                ),
                 onPressed: selectedInterest == null ? null : () {
                   // Call the function to update the user's interests
                   updateUserInterests([selectedInterest]);

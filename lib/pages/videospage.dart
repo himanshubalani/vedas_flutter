@@ -11,6 +11,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:vedas/pages/interestspage.dart';
 import 'package:get/get.dart';
 
+import '../bottomnavbar.dart';
+
 class VideosPage extends StatefulWidget {
   @override
   _VideosPageState createState() => _VideosPageState();
@@ -62,6 +64,7 @@ class _VideosPageState extends State<VideosPage> {
           statusBarColor: Colors.transparent,
           systemNavigationBarColor: Colors.white),
       child: Scaffold(
+        bottomNavigationBar: MyBottomNavigationBar(),
         backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.red[200],

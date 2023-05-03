@@ -102,6 +102,9 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _submitButton() {
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.white, backgroundColor: Colors.deepPurple,
+      ),
       onPressed: () {
         if (isLogin) {
           signInWithEmailAndPassword();
@@ -111,12 +114,16 @@ class _LoginPageState extends State<LoginPage> {
               interests: <String, dynamic>{}));
           }
       },
-      child: Text(isLogin ? 'Login' : 'Create Account'),
+      child: Text(style:TextStyle(color: Colors.white),
+      isLogin ? 'Login' : 'Create Account'),
     );
   }
 
   Widget _LoginRegisterButton() {
     return TextButton(
+      style: TextButton.styleFrom(
+        foregroundColor: Colors.deepPurple,
+      ),
       onPressed: () {
         setState(() {
           isLogin = !isLogin;
@@ -131,6 +138,10 @@ class _LoginPageState extends State<LoginPage> {
   }
   Widget _googlelogin() {
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: Colors.deepPurple,
+        onPrimary: Colors.white,
+      ),
       onPressed: () {
         Auth().signInWithGoogle().then((user) {
           Navigator.pushReplacement(

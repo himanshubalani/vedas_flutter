@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:vedas/auth.dart';
 import 'package:vedas/pages/homepage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../bottomnavbar.dart';
 import 'interestspage.dart';
 import 'loginpage.dart';
 import 'package:get/get.dart';
@@ -62,6 +63,14 @@ class AccountPage extends StatelessWidget {
 
   Widget signOutButton(BuildContext context) {
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.deepPurple,
+        minimumSize: const Size(88, 36),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(2)),
+        ),
+      ),
       onPressed: () {
         signOut(context);
       },
@@ -71,6 +80,14 @@ class AccountPage extends StatelessWidget {
 
   Widget updateInterestsButton(context) {
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.deepPurple,
+        minimumSize: const Size(88, 36),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(2)),
+        ),
+      ),
       onPressed: () {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => InterestsPage()));
       },
@@ -80,6 +97,14 @@ class AccountPage extends StatelessWidget {
 
   Widget goHomeButton(context) {
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.deepPurple,
+        minimumSize: const Size(88, 36),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(2)),
+        ),
+      ),
       onPressed: () {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
       },
@@ -107,7 +132,10 @@ class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
+      bottomNavigationBar: MyBottomNavigationBar(),
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         title: const Text('Profile'),
         centerTitle: true,
       ),

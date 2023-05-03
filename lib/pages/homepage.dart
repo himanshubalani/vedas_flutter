@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'bookspage.dart';
+import 'bookspage2.dart';
 import 'videospage.dart';
 import 'accountpage.dart';
 
@@ -10,7 +10,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ThemeData.dark().scaffoldBackgroundColor,
       appBar: AppBar(
+        backgroundColor: const Color(0xFF75D545),
         title: const Text('VEDAS'),
         centerTitle: true,
       ),
