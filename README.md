@@ -9,7 +9,6 @@ A flutter project focusing on providing undergraduate students distraction free 
   <img src="https://contrib.rocks/image?repo=himanshubalani/vedas_flutter" />
 </a>
 
-Made with [contrib.rocks](https://contrib.rocks).
 
 
 
